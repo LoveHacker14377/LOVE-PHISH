@@ -21,10 +21,11 @@ banner() {
     echo -e "${CYAN}║   🌟 ${GREEN}HACK THE HEART OF CYBER!${CYAN} 🌟   ║${RESET}"
     echo -e "${BLUE}║   💻 ${MAGENTA}CODED BY: ${WHITE}GHANSHAM RAUT${BLUE} 💻    ║${RESET}"
     echo -e "${PURPLE}╠════════════════════════════════════╣${RESET}"
-    echo -e "${YELLOW}║   🔗 ${YELLOW}insta ${CYAN}@_love__hacker__143_${YELLOW} 🔗 ║${RESET}"
+    echo -e "${YELLOW}║   🔗 ${YELLOW}Insta: ${CYAN}@_love__hacker__143_${YELLOW} 🔗 ║${RESET}"
     echo -e "${RED}║   💾 ${GREEN}Version: ${WHITE}${VERSION}${RED} 💾               ║${RESET}"
     echo -e "${PURPLE}╚════════════════════════════════════╝${RESET}"
-    echo -e "${MAGENTA}   🚀 ${WHITE}Unleash the Phish, Spread the Love!${MAGENTA} 🚀 ${RESET}"
+    echo -e "${MAGENTA}   ⚠️ ${RED} WARNING ${MAGENTA} ⚠️ ${RESET}"
+    echo -e "${MAGENTA}   🚨 ${YELLOW} This tool is made only for educational and research purposes. Any misuse of LovePhish will be the sole responsibility of the user. Love Hacker will not be responsible for any kind of illegal activity done with this tool. ${MAGENTA} 🚨 ${RESET}"
 }
 
 cleanup() {
