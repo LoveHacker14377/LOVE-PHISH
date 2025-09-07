@@ -1,40 +1,30 @@
 #!/bin/bash
 
+# Define ANSI color codes
 RED='\033[1;31m'
 GREEN='\033[1;32m'
 YELLOW='\033[1;33m'
 CYAN='\033[1;36m'
-BLUE='\033[0;34m'
+BLUE='\033[1;34m'
+PURPLE='\033[1;35m'
+MAGENTA='\033[1;35m'
+WHITE='\033[1;37m'
 BOLD='\033[1m'
 RESET='\033[0m'
 
 export VERSION=2.4
 
 banner() {
-    # Define ANSI color codes for a vibrant gradient effect
-    RED='\033[1;31m'    # Bold Red
-    CYAN='\033[1;36m'   # Bold Cyan
-    YELLOW='\033[1;33m' # Bold Yellow
-    BLUE='\033[1;34m'   # Bold Blue
-    GREEN='\033[1;32m'  # Bold Green
-    PURPLE='\033[1;35m' # Bold Purple
-    MAGENTA='\033[1;35m' # Bold Magenta
-    WHITE='\033[1;37m'  # Bold White
-    RESET='\033[0m'     # Reset colors
-
-    # Version variable (assuming it's defined, e.g., VERSION="2.0")
-    VERSION="2.0"
-
     echo -e "${PURPLE}╔════════════════════════════════════╗${RESET}"
-    echo -e "${RED}║   🔥 ${YELLOW}***** ${WHITE}LOVE PHISH ${YELLOW}*****${R>
+    echo -e "${RED}║   🔥 ${YELLOW}***** ${WHITE}LOVE PHISH ${YELLOW}*****${RED} 🔥     ║${RESET}"
     echo -e "${PURPLE}╠════════════════════════════════════╣${RESET}"
-    echo -e "${CYAN}║   🌟 ${GREEN}HACK THE HEART OF CYBER!${CYAN} 🌟   ║${RE>
-    echo -e "${BLUE}║   💻 ${MAGENTA}CODED BY: ${WHITE}GHANSHAM RAUT${BLUE} [>
+    echo -e "${CYAN}║   🌟 ${GREEN}HACK THE HEART OF CYBER!${CYAN} 🌟   ║${RESET}"
+    echo -e "${BLUE}║   💻 ${MAGENTA}CODED BY: ${WHITE}GHANSHAM RAUT${BLUE} 💻    ║${RESET}"
     echo -e "${PURPLE}╠════════════════════════════════════╣${RESET}"
-    echo -e "${YELLOW}║   🔗 ${CYAN}insta @_love__hacker__143_${YELLOW} 🔗 ║$>
-    echo -e "${RED}║   💾 ${GREEN}Version: ${WHITE}${VERSION}${RED} 💾       >
+    echo -e "${YELLOW}║   🔗 ${CYAN}insta @_love__hacker__143_${YELLOW} 🔗 ║${RESET}"
+    echo -e "${RED}║   💾 ${GREEN}Version: ${WHITE}${VERSION}${RED} 💾               ║${RESET}"
     echo -e "${PURPLE}╚════════════════════════════════════╝${RESET}"
-    echo -e "${MAGENTA}   🚀 ${WHITE}Unleash the Phish, Spread the Love!${MAG>
+    echo -e "${MAGENTA}   🚀 ${WHITE}Unleash the Phish, Spread the Love!${MAGENTA} 🚀 ${RESET}"
 }
 
 cleanup() {
@@ -65,7 +55,7 @@ cleanup() {
 
 trap cleanup SIGINT
 
-clean_background_process(){
+clean_background_process() {
     if pgrep -f "cloudflared" > /dev/null; then
         killall cloudflared
         echo -e "\n${YELLOW} [ ! ] Cloudflared stopped.${RESET}\n"
@@ -97,7 +87,7 @@ check_update() {
     REMOTE_COMMIT=$(git rev-parse origin/$(git rev-parse --abbrev-ref HEAD))
 
     if [ "$LOCAL_COMMIT" != "$REMOTE_COMMIT" ]; then
-        echo -e -n "\n${YELLOW} [ ? ] A new update is available. New version: ${VERSION} . Do you want to update? (Y/N): ${RESET}"
+        echo -e -n "\n${YELLOW} [ ? ] A new update is available. New version: ${VERSION}. Do you want to update? (Y/N): ${RESET}"
         read -r response
         response=${response:-"Y"}
 
@@ -252,7 +242,7 @@ short_url() {
     fi
 }
 
-select_methode () {
+select_methode() {
     clear
     banner
 
@@ -352,7 +342,6 @@ select_methode () {
             sleep 1
             select_methode  
             ;;
-
     esac
 }
 
