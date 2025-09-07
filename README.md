@@ -35,10 +35,11 @@ apt install -y git curl python python-pip
 ```
 ## Running the Code
 ```bash
-git clone https://github.com/perviz19/EchoPhish.git
+git clone https://github.com/LoveHacker14377/LOVE-PHISH.git
 cd Love💔Phish
-chmod +x EchoPhish
-./EchoPhish
+pip install -r requirements.txt
+chmod +x LOVE-PHISH
+./LOVE-PHISH
 ```
 ## Demo
 
