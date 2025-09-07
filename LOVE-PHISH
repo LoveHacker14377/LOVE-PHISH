@@ -15,15 +15,15 @@ RESET='\033[0m'
 export VERSION=2.4
 
 banner() {
-    echo -e "${PURPLE}╔════════════════════════════════════╗${RESET}"
-    echo -e "${RED}║   🔥 ${YELLOW}***** ${WHITE}LOVE PHISH ${YELLOW}*****${RED} 🔥     ║${RESET}"
-    echo -e "${PURPLE}╠════════════════════════════════════╣${RESET}"
-    echo -e "${CYAN}║   🌟 ${GREEN}HACK THE HEART OF CYBER!${CYAN} 🌟   ║${RESET}"
-    echo -e "${BLUE}║   💻 ${MAGENTA}CODED BY: ${WHITE}GHANSHAM RAUT${BLUE} 💻    ║${RESET}"
-    echo -e "${PURPLE}╠════════════════════════════════════╣${RESET}"
+    echo -e "${PURPLE}╔═════════════════════════════════════╗${RESET}"
+    echo -e "${RED}║   🔥 ${YELLOW}***** ${WHITE}LOVE PHISH ${YELLOW}*****${RED} 🔥      ║${RESET}"
+    echo -e "${PURPLE}╠═════════════════════════════════════╣${RESET}"
+    echo -e "${CYAN}║   🌟 ${GREEN}HACK THE HEART OF CYBER!${CYAN} 🌟    ║${RESET}"
+    echo -e "${BLUE}║   💻 ${MAGENTA}CODED BY: ${WHITE}GHANSHAM RAUT${BLUE} 💻     ║${RESET}"
+    echo -e "${PURPLE}╠═════════════════════════════════════╣${RESET}"
     echo -e "${YELLOW}║   🔗 ${YELLOW}Insta: ${CYAN}@_love__hacker__143_${YELLOW} 🔗 ║${RESET}"
-    echo -e "${RED}║   💾 ${GREEN}Version: ${WHITE}${VERSION}${RED} 💾               ║${RESET}"
-    echo -e "${PURPLE}╚════════════════════════════════════╝${RESET}"
+    echo -e "${RED}║   💾 ${GREEN}Version: ${WHITE}${VERSION}${RED} 💾                ║${RESET}"
+    echo -e "${PURPLE}╚═════════════════════════════════════╝${RESET}"
 
     echo    # <-- Ye ek empty line print karega, matlab space
     echo    # <-- Ye ek empty line print karega, matlab space
