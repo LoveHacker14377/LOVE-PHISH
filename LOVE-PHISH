@@ -21,7 +21,7 @@ banner() {
     echo -e "${CYAN}║   🌟 ${GREEN}HACK THE HEART OF CYBER!${CYAN} 🌟   ║${RESET}"
     echo -e "${BLUE}║   💻 ${MAGENTA}CODED BY: ${WHITE}GHANSHAM RAUT${BLUE} 💻    ║${RESET}"
     echo -e "${PURPLE}╠════════════════════════════════════╣${RESET}"
-    echo -e "${YELLOW}║   🔗 ${CYAN}insta @_love__hacker__143_${YELLOW} 🔗 ║${RESET}"
+    echo -e "${YELLOW}║   🔗 ${YELLOW}insta ${CYAN}@_love__hacker__143_${YELLOW} 🔗 ║${RESET}"
     echo -e "${RED}║   💾 ${GREEN}Version: ${WHITE}${VERSION}${RED} 💾               ║${RESET}"
     echo -e "${PURPLE}╚════════════════════════════════════╝${RESET}"
     echo -e "${MAGENTA}   🚀 ${WHITE}Unleash the Phish, Spread the Love!${MAGENTA} 🚀 ${RESET}"
