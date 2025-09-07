@@ -36,6 +36,7 @@ banner() {
     echo -e "${PURPLE}╚════════════════════════════════════╝${RESET}"
     echo -e "${MAGENTA}   🚀 ${WHITE}Unleash the Phish, Spread the Love!${MAG>
 }
+
 cleanup() {
     if pgrep -f "cloudflared" > /dev/null; then
         killall cloudflared
@@ -251,7 +252,7 @@ short_url() {
     fi
 }
 
-select_methode() {
+select_methode () {
     clear
     banner
 
