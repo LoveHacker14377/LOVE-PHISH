@@ -1,0 +1,263 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: #0b0f19;
+    color: #fff;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 15px 40px 15px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Page Views control */
+.page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Reel Page Styles */
+.top-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 0 5px;
+}
+
+.instagram-logo {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+}
+
+.continue-web {
+    color: #3b82f6;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.reel-card {
+    width: 100%;
+    max-width: 330px;
+    background-color: #1a2234;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.reel-video-container {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background-color: #000;
+}
+
+.reel-video-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-icon::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 16px solid #fff;
+    margin-left: 3px;
+}
+
+.reel-text {
+    text-align: center;
+    margin: 18px 0;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 15px;
+}
+
+.primary-btn {
+    width: 100%;
+    max-width: 330px;
+    padding: 12px;
+    border: none;
+    background-color: #0095f6;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.primary-btn:hover {
+    background-color: #1877f2;
+}
+
+.secondary-link {
+    color: #0095f6;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.terms-text {
+    text-align: center;
+    font-size: 11px;
+    color: #8e8e8e;
+    padding: 0 20px;
+    line-height: 1.4;
+}
+
+.terms-text a {
+    color: #8e8e8e;
+    text-decoration: underline;
+}
+
+/* Login Page Styles */
+.login-header-nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.login-content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.profile-pic {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Border hata di gayi hai */
+    margin-bottom: 12px;
+}
+
+.username-display {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.field {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.field input {
+    width: 100%;
+    /* Height badha di gayi hai (padding increase karke) */
+    padding: 16px 14px;
+    font-size: 14px;
+    background: #121824;
+    border-radius: 12px;
+    border: 1px solid #263147;
+    color: #fff;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.field input::placeholder {
+    color: #8e8e8e;
+}
+
+.error-message {
+    color: #ed4956;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 15px;
+    width: 100%;
+    line-height: 1.4;
+}
+
+.try-another-btn {
+    width: 100%;
+    max-width: 330px;
+    padding: 12px;
+    border: 1px solid #263147;
+    background-color: transparent;
+    color: #f5f5f5;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.try-another-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
